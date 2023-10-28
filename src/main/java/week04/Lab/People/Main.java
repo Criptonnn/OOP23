@@ -22,7 +22,15 @@ public class Main {
 //        people.add(new Person("Emir", "Azici 82"));
 //        people.add(new Teacher("Haki", "Bihac", 2000));
 
-        printDepartment(people);
+        //printDepartment(people);
+
+        ArrayList<Integer> grades = new ArrayList<>();
+        grades.add(2);
+        grades.add(5);
+        Student emir = new Student("Emir", "Azici", 20, "Sarajevo", 10, 2000, grades);
+        System.out.println(emir.getCreddits());
+        emir.study();
+        System.out.println(emir.getCreddits());
 
     }
 
