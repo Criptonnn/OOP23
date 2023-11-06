@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class DataStructures {
-    private List<TaskItem> tasks = new ArrayList<>();
+    private final List<TaskItem> tasks;
     public DataStructures() {
         tasks = Arrays.asList(
                 new TaskItem(1,"Push lab code to the github", Status.TO_DO),

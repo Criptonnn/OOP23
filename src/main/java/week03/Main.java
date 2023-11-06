@@ -10,9 +10,11 @@ public class Main {
         DataStructures dataStructures = new DataStructures();
 
 
+        //System.out.println(dataStructures.returnAll());
+
         Optional<TaskItem> op = dataStructures.getByStatus(Status.TO_DO);
         op.ifPresent(task -> {
-            System.out.println(task.getDesc());
+            //System.out.println(task.getDesc());
         });
 
         System.out.println("--------");
@@ -26,18 +28,18 @@ public class Main {
 
         List<TaskItem> newList = dataStructures.idBiggerThanTwo();
         newList.forEach(task -> {
-            System.out.println(task.getDesc());
+            //System.out.println(task.getDesc());
         });
 
-        dataStructures.returnDesc();
+        //dataStructures.returnDesc();
 
         System.out.println("--------");
 
-        connection.getTaskByStatus(Status.CANCELLED);
+        //connection.getTaskByStatus(Status.CANCELLED);
 
         System.out.println("--------");
 
-        connection.getAllTasks();
+        //connection.getAllTasks();
 
     }
 }

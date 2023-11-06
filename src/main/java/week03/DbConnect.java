@@ -23,7 +23,7 @@ public class DbConnect {
                 .prepareStatement("SELECT * FROM tasks;");
         ResultSet rs = statement.executeQuery();
         while (rs.next()) {
-            System.out.println(rs.getString("task_description"));
+            System.out.println(rs.getString(2)); // ili naziv kolone ili index kolone; INDEX OD 1 POCINJE U SQL
             System.out.println(rs.getString("task_status"));
         }
     }
