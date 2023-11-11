@@ -13,6 +13,7 @@ public class Main {
     }
 
     public static <T> ArrayList<T> reverseList(ArrayList<T> originalList) {
+        // <T> VAZDA IDE PRIJE RETURN TYPEA, STO JE U NASEM SLUCAJU ArrayList<T>, DA BISMO NAGLASILI PROGRAMU DA JE TO GENERICi
         ArrayList<T> newList = new ArrayList<>();
         for(int i = originalList.size() - 1; i >= 0; i--) {
             newList.add(originalList.get(Integer.valueOf(i)));
