@@ -36,13 +36,12 @@ class Task01 {
         RecordLogger recordLogger = new RecordLogger("Record logger");
         ClassLogger classLogger  = new ClassLogger("Class logger");
 
-        Logger recordLog = (String message) -> {
-            recordLogger.logMessage(message);
+        Logger recordLog = (String message1) -> {
+            recordLogger.logMessage(message1);
         };
         Logger classLog = (String message) -> {
             classLogger.logMessage(message);
         };
-
         recordLog.logMessage("This message is logged with the record log");
         classLog.logMessage("This message is logged with the class log");
     }

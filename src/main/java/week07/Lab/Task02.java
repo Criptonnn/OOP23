@@ -14,6 +14,10 @@ class LibraryCatalog {
         this.bookList = bookList;
     }
 
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
     public Optional<Book> checkAvailability(String title) {
         return bookList.stream().filter(book -> book.title().equals(title)).findFirst(); // ako je available, returna nam knjigu, ako nije ne returna nista
     }
@@ -50,6 +54,13 @@ class LibraryCatalog {
         }
     }
 
+    public void updateAvailabilityV2(String title, boolean availability) {
+        bookList.stream().filter(book -> book.title().equals(title))
+                .findFirst()
+                .map(book -> bookList.set(bookList.indexOf(book), new Book(book.title(), book.author(), book.publicationYear(), availability)));
+    }
+
+
 }
 
 
@@ -73,11 +84,16 @@ class Task02 {
             System.out.println("Book is not present");
         }
 
-        Optional<Book> myBook3 = libraryCatalog.checkAvailability("Knjiga1");
+        Optional<Book> myBook3 = libraryCatalog.checkAvailability("Knjiga01");
         if(myBook3.isPresent()) {
             System.out.println(myBook3.get());
         } else {
             System.out.println("Not available");
+        }
+
+        libraryCatalog.updateAvailabilityV2("Knjiga3", true);
+        for(Book b : libraryCatalog.getBookList()) {
+            System.out.println(b);
         }
     }
 }
