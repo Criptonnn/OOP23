@@ -24,7 +24,7 @@ class Task01Test {
     void testIfStudentisPresent() {
         StudentSystem system = new StudentSystem("C:\\Users\\User\\IdeaProjects\\ObjectOrientedProgramming\\src\\main\\java\\week11\\students.csv");
 //        assertNotEquals(true, system.getStudentList().isEmpty());
-        assertTrue(system.getStudentList().size() > 0, "there is at least noe student in the list");
+        assertTrue(!system.getStudentList().isEmpty(), "there is at least noe student in the list");
     }
 
     // double check

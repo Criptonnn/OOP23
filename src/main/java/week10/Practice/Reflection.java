@@ -42,6 +42,7 @@ class Reflection {
         for(Field field : parrotFields) {
             field.setAccessible(true);
             if(field.getName().equals("color")) {
+                System.out.println(field.get(parrot));
                 field.set(parrot, "Blue");
             }
         }
